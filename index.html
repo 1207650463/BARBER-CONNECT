@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberHub PE | Barbearias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            ✂ BARBER<span>HUB</span>
+            <small>PERNAMBUCO</small>
+        </div>
+
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#barbearias">Barbearias</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="subtitulo">CONECTANDO CLIENTES E BARBEIROS</p>
+
+            <h1>
+                SEU ESTILO.<br>
+                <span>SUA BARBEARIA.</span><br>
+                SUA CIDADE.
+            </h1>
+
+            <p>
+                Encontre as melhores barbearias, conheça os profissionais
+                e descubra quem está disponível para atender você.
+            </p>
+
+            <a href="#barbearias" class="botao">
+                ENCONTRAR BARBEARIA →
+            </a>
+
+            <p class="cidades">
+                Mirandiba • Carnaubeira da Penha • Cachoeirinha
+            </p>
+        </div>
+
+        <div class="hero-image">
+            <div class="circulo">
+                <span>✂</span>
+                <h2>BARBER<br>STYLE</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="barbearias" id="barbearias">
+
+        <div class="titulo">
+            <p>ENCONTRE SEU PROFISSIONAL</p>
+            <h2>BARBEARIAS <span>PERTO DE VOCÊ</span></h2>
+        </div>
+
+        <div class="filtros">
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Buscar barbearia ou barbeiro..."
+                oninput="mostrarBarbearias()"
+            >
+
+            <select id="cidade" onchange="mostrarBarbearias()">
+                <option value="Todas">Todas as cidades</option>
+                <option value="Mirandiba">Mirandiba</option>
+                <option value="Carnaubeira da Penha">Carnaubeira da Penha</option>
+                <option value="Cachoeirinha">Cachoeirinha</option>
+            </select>
+
+            <select id="disponibilidade" onchange="mostrarBarbearias()">
+                <option value="Todas">Qualquer disponibilidade</option>
+                <option value="Disponível">Barbeiros disponíveis</option>
+            </select>
+        </div>
+
+        <p id="contador" class="contador"></p>
+
+        <div class="cards" id="listaBarbearias"></div>
+
+        <p class="aviso">
+            Os estabelecimentos e profissionais desta demonstração são fictícios.
+            Cadastre informações reais antes de publicar o site.
+        </p>
+
+    </section>
+
+    <section class="como-funciona">
+        <p>É MUITO SIMPLES</p>
+        <h2>ENCONTRE. ESCOLHA. <span>CORTE.</span></h2>
+
+        <div class="etapas">
+
+            <div class="etapa">
+                <h3>01</h3>
+                <h4>ESCOLHA A CIDADE</h4>
+                <p>Selecione sua cidade e encontre as barbearias disponíveis.</p>
+            </div>
+
+            <div class="etapa">
+                <h3>02</h3>
+                <h4>ESCOLHA O BARBEIRO</h4>
+                <p>Conheça os profissionais e confira a disponibilidade.</p>
+            </div>
+
+            <div class="etapa">
+                <h3>03</h3>
+                <h4>ENTRE EM CONTATO</h4>
+                <p>Fale diretamente com a barbearia para combinar seu atendimento.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="selo">BH<br><span>PE</span></div>
+
+        <div>
+            <p>BARBERHUB PERNAMBUCO</p>
+            <h2>VALORIZANDO QUEM<br><span>ENTENDE DE CORTE.</span></h2>
+
+            <p>
+                Uma plataforma criada para aproximar clientes e barbearias
+                de Pernambuco. Encontre profissionais da sua região
+                de maneira rápida e prática.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">
+            ✂ BARBER<span>HUB</span>
+            <small>PERNAMBUCO</small>
+        </div>
+
+        <p>Conectando clientes e barbeiros.</p>
+        <p>© <span id="ano"></span> BarberHub PE</p>
+    </footer>
+
+    <div class="modal" id="modal">
+        <div class="modal-conteudo">
+            <button class="fechar" onclick="fecharModal()">×</button>
+
+            <p>DETALHES DA BARBEARIA</p>
+            <h2 id="nomeModal"></h2>
+            <p id="enderecoModal"></p>
+
+            <h3>BARBEIROS</h3>
+            <div id="barbeirosModal"></div>
+
+            <a id="contatoModal" class="botao contato" href="#" target="_blank">
+                ENTRAR EM CONTATO
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+      </html>
