@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --preto: #111310;
+    --verde: #d7ff35;
+    --vermelho: #ed4b35;
+    --branco: #f3f0e8;
+}
+
+body {
+    background: var(--branco);
+    color: var(--preto);
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: var(--preto);
+    color: white;
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+
+.logo span {
+    color: var(--verde);
+}
+
+.logo small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #aaa;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--verde);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* INÍCIO */
+
+.hero {
+    background: var(--preto);
+    color: white;
+    min-height: 600px;
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.subtitulo {
+    color: var(--verde);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(60px, 8vw, 100px);
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: var(--verde);
+}
+
+.hero-content > p:not(.subtitulo):not(.cidades) {
+    color: #bbb;
+    line-height: 1.8;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 17px 22px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.cidades {
+    margin-top: 25px;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.hero-image {
+    width: 330px;
+    height: 330px;
+    background: var(--verde);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.circulo {
+    text-align: center;
+    color: var(--preto);
+}
+
+.circulo span {
+    font-size: 85px;
+}
+
+.circulo h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 55px;
+    line-height: 0.85;
+    font-weight: 900;
+}
+
+/* BARBEARIAS */
+
+.barbearias {
+    padding: 90px 10%;
+}
+
+.titulo p,
+.sobre > div > p:first-child {
+    color: var(--vermelho);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.titulo h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 55px;
+    margin-top: 12px;
+    font-weight: 900;
+}
+
+.titulo h2 span {
+    color: var(--vermelho);
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 12px;
+    margin: 35px 0 20px;
+}
+
+.filtros input,
+.filtros select {
+    width: 100%;
+    height: 55px;
+    border: 1px solid #ddd;
+    background: white;
+    padding: 0 15px;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+.filtros input:focus,
+.filtros select:focus {
+    border-color: var(--vermelho);
+}
+
+.contador {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #666;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e5e2d8;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px #00000015;
+}
+
+.card-topo {
+    height: 120px;
+    background: var(--preto);
+    color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card-topo h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 50px;
+}
+
+.card-topo span {
+    font-size: 30px;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.card-info p {
+    font-size: 11px;
+    color: #777;
+    margin: 8px 0;
+}
+
+.status {
+    color: #248b49 !important;
+    font-weight: bold;
+}
+
+.status.ocupado {
+    color: #a66d24 !important;
+}
+
+.acoes {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.acoes button {
+    flex: 1;
+    padding: 12px 5px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    background: white;
+}
+
+.acoes button:hover {
+    border-color: var(--vermelho);
+}
+
+.acoes .detalhes {
+    background: var(--preto);
+    color: white;
+}
+
+.aviso {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 25px;
+}
+
+/* COMO FUNCIONA */
+
+.como-funciona {
+    background: var(--preto);
+    color: white;
+    padding: 90px 10%;
+}
+
+.como-funciona > p {
+    color: var(--verde);
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.como-funciona h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 55px;
+    margin: 15px 0 45px;
+}
+
+.como-funciona h2 span {
+    color: var(--verde);
+}
+
+.etapas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.etapa {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.etapa h3 {
+    color: var(--verde);
+    font-size: 15px;
+}
+
+.etapa h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 25px;
+    margin: 20px 0 10px;
+}
+
+.etapa p {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* SOBRE */
+
+.sobre {
+    padding: 90px 12%;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.selo {
+    width: 140px;
+    height: 140px;
+    background: var(--vermelho);
+    border: 7px solid var(--preto);
+    border-radius: 50%;
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    flex-shrink: 0;
+    transform: rotate(-8deg);
+}
+
+.selo span {
+    color: var(--verde);
+    font-size: 25px;
+}
+
+.sobre h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    line-height: 0.95;
+    margin: 15px 0;
+}
+
+.sobre h2 span {
+    color: var(--vermelho);
+}
+
+.sobre div:last-child > p:last-child {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: var(--preto);
+    color: white;
+    padding: 30px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+footer p {
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* JANELA DE DETALHES */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: #000000cc;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modal-conteudo {
+    background: var(--branco);
+    padding: 35px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-conteudo > p:first-of-type {
+    color: var(--vermelho);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.modal-conteudo h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.modal-conteudo h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    margin: 25px 0 12px;
+    font-size: 22px;
+}
+
+.fechar {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.barbeiro-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+    background: white;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.barbeiro-item .disponivel {
+    color: #248b49;
+    font-weight: bold;
+}
+
+.barbeiro-item .indisponivel {
+    color: #a66d24;
+    font-weight: bold;
+}
+
+.contato {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.contato.escondido {
+    display: none;
+}
+
+/* CELULAR E TABLET */
+
+@media (max-width: 900px) {
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 0 6%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--preto);
+        padding: 25px;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    nav.ativo {
+        display: flex;
+    }
+
+    .hero {
+        padding: 75px 7%;
+        min-height: 570px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero-image {
+        position: absolute;
+        right: -130px;
+        opacity: 0.18;
+    }
+
+    .barbearias {
+        padding: 70px 6%;
+    }
+
+    .titulo h2 {
+        font-size: 43px;
+    }
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .como-funciona {
+        padding: 70px 7%;
+    }
+
+    .como-funciona h2 {
+        font-size: 42px;
+    }
+
+    .etapas {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sobre {
+        padding: 70px 7%;
+        display: block;
+    }
+
+    .selo {
+        margin-bottom: 35px;
+    }
+
+    .sobre h2 {
+        font-size: 40px;
+    }
+
+    footer {
+        padding: 30px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal-conteudo {
+        padding: 28px 22px;
+    }
+  }
